@@ -17,6 +17,6 @@ print(e_2_1)
 e_2_2 = math.pow(math.e, 2)
 print(e_2_2)
 
-x = 3.5
+x = 2
 e_2_3 = math.exp(x)
 print(e_2_3)
