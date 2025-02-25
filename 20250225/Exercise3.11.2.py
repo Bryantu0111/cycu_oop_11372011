@@ -1,3 +1,13 @@
+#第一種方法
+def print_right(s):
+    print(" "*(40-len(s))+s)
+
+print_right("Monty")
+print_right("Python's")
+print_right("Flying Circus")
+
+
+#第二種方法
 str1 = "Monty"
 str2 = "Python's"
 str3 = "Flying Circus"
