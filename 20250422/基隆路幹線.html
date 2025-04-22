@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a6ad6c30dce2c075b72faa07d8c90a3d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a6ad6c30dce2c075b72faa07d8c90a3d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a6ad6c30dce2c075b72faa07d8c90a3d = L.map(
+                "map_a6ad6c30dce2c075b72faa07d8c90a3d",
+                {
+                    center: [24.953492, 121.564029],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f1586d641d00041a4be716cd66d06d89 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f1586d641d00041a4be716cd66d06d89.addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var marker_050057c4c86b54ec30f64d4bf5ad6808 = L.marker(
+                [24.953492, 121.564029],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_ba64e1ccbdf2c8b6605e6a3762a9df04 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b875a40907206152b2654a6f59d3b803 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9489836e7aeb86d2f2b8a43c84a136e = $(`<div id="html_d9489836e7aeb86d2f2b8a43c84a136e" style="width: 100.0%; height: 100.0%;">站名: 中生橋頭</div>`)[0];
+                popup_b875a40907206152b2654a6f59d3b803.setContent(html_d9489836e7aeb86d2f2b8a43c84a136e);
+            
+        
+
+        marker_050057c4c86b54ec30f64d4bf5ad6808.bindPopup(popup_b875a40907206152b2654a6f59d3b803)
+        ;
+
+        
+    
+    
+                marker_050057c4c86b54ec30f64d4bf5ad6808.setIcon(icon_ba64e1ccbdf2c8b6605e6a3762a9df04);
+            
+    
+            var marker_7f02da1af7071338b90e3e126b0f4d5a = L.marker(
+                [24.954144, 121.5616522],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_8614d0c03ab69cc55d03d0688ece1881 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6804f4f967b52d9189ec800abe395ed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_718415ad1cb32578756bd599f0a8a12f = $(`<div id="html_718415ad1cb32578756bd599f0a8a12f" style="width: 100.0%; height: 100.0%;">站名: 大崎腳</div>`)[0];
+                popup_c6804f4f967b52d9189ec800abe395ed.setContent(html_718415ad1cb32578756bd599f0a8a12f);
+            
+        
+
+        marker_7f02da1af7071338b90e3e126b0f4d5a.bindPopup(popup_c6804f4f967b52d9189ec800abe395ed)
+        ;
+
+        
+    
+    
+                marker_7f02da1af7071338b90e3e126b0f4d5a.setIcon(icon_8614d0c03ab69cc55d03d0688ece1881);
+            
+    
+            var marker_a59a3f9db022b5fdb5cc0a024b4c5e62 = L.marker(
+                [24.954371, 121.5591371],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_1e4e0c64fe0dd605154885103e864241 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00039375d20539291fb1fb5685f7a27e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_164d92006429947fd3083979929e1da6 = $(`<div id="html_164d92006429947fd3083979929e1da6" style="width: 100.0%; height: 100.0%;">站名: 青潭廠</div>`)[0];
+                popup_00039375d20539291fb1fb5685f7a27e.setContent(html_164d92006429947fd3083979929e1da6);
+            
+        
+
+        marker_a59a3f9db022b5fdb5cc0a024b4c5e62.bindPopup(popup_00039375d20539291fb1fb5685f7a27e)
+        ;
+
+        
+    
+    
+                marker_a59a3f9db022b5fdb5cc0a024b4c5e62.setIcon(icon_1e4e0c64fe0dd605154885103e864241);
+            
+    
+            var marker_3adbfcc7137d062684e20290e5f8adfe = L.marker(
+                [24.953935, 121.557333],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_2cdcd7fe1af32bc96e92958c1eec809a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_846290369a653722a1a67f714e06c2c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6004bb8affcfcee6b925ba0ed71985aa = $(`<div id="html_6004bb8affcfcee6b925ba0ed71985aa" style="width: 100.0%; height: 100.0%;">站名: 郵政橋</div>`)[0];
+                popup_846290369a653722a1a67f714e06c2c5.setContent(html_6004bb8affcfcee6b925ba0ed71985aa);
+            
+        
+
+        marker_3adbfcc7137d062684e20290e5f8adfe.bindPopup(popup_846290369a653722a1a67f714e06c2c5)
+        ;
+
+        
+    
+    
+                marker_3adbfcc7137d062684e20290e5f8adfe.setIcon(icon_2cdcd7fe1af32bc96e92958c1eec809a);
+            
+    
+            var marker_cdf404c4e88b8de4c2eb0166dae9ced5 = L.marker(
+                [24.953628, 121.554816],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_ee62b8beae5ad647d2267c4ed7867af8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_341b6b6161e8ecccb694f01a59673a55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6beef392a3826057d7c7fb5133dd167c = $(`<div id="html_6beef392a3826057d7c7fb5133dd167c" style="width: 100.0%; height: 100.0%;">站名: 青潭國小一</div>`)[0];
+                popup_341b6b6161e8ecccb694f01a59673a55.setContent(html_6beef392a3826057d7c7fb5133dd167c);
+            
+        
+
+        marker_cdf404c4e88b8de4c2eb0166dae9ced5.bindPopup(popup_341b6b6161e8ecccb694f01a59673a55)
+        ;
+
+        
+    
+    
+                marker_cdf404c4e88b8de4c2eb0166dae9ced5.setIcon(icon_ee62b8beae5ad647d2267c4ed7867af8);
+            
+    
+            var marker_44653664cc7129b0189a9e77097bd929 = L.marker(
+                [24.95324, 121.551785],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_0a842a943ccfc151835b28a9b5f76686 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b88b2e90119fc5fa00451f1b82bdf03e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c46c276ef03a0c957a511baab77ced13 = $(`<div id="html_c46c276ef03a0c957a511baab77ced13" style="width: 100.0%; height: 100.0%;">站名: 青潭新村</div>`)[0];
+                popup_b88b2e90119fc5fa00451f1b82bdf03e.setContent(html_c46c276ef03a0c957a511baab77ced13);
+            
+        
+
+        marker_44653664cc7129b0189a9e77097bd929.bindPopup(popup_b88b2e90119fc5fa00451f1b82bdf03e)
+        ;
+
+        
+    
+    
+                marker_44653664cc7129b0189a9e77097bd929.setIcon(icon_0a842a943ccfc151835b28a9b5f76686);
+            
+    
+            var marker_3e83b98aa2b3e16ff2960710565555cb = L.marker(
+                [24.952342, 121.55011],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_334a5a510a88110ddf3b854d3a1d778b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_facb91c1b39c90bd794a19172bb9919e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_740a204c4d746e907446b2496d4dbeb0 = $(`<div id="html_740a204c4d746e907446b2496d4dbeb0" style="width: 100.0%; height: 100.0%;">站名: 土銀訓練中心</div>`)[0];
+                popup_facb91c1b39c90bd794a19172bb9919e.setContent(html_740a204c4d746e907446b2496d4dbeb0);
+            
+        
+
+        marker_3e83b98aa2b3e16ff2960710565555cb.bindPopup(popup_facb91c1b39c90bd794a19172bb9919e)
+        ;
+
+        
+    
+    
+                marker_3e83b98aa2b3e16ff2960710565555cb.setIcon(icon_334a5a510a88110ddf3b854d3a1d778b);
+            
+    
+            var marker_a13d2f415ca179d058294c0b81824ffd = L.marker(
+                [24.952626, 121.5470007],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_773e5ae53be02077007557d69ddcf68d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_893cd790f12821f5577d1f12fac22750 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41b7f9da963c2a01a83bf415a5efe1ab = $(`<div id="html_41b7f9da963c2a01a83bf415a5efe1ab" style="width: 100.0%; height: 100.0%;">站名: 青潭(北宜路)</div>`)[0];
+                popup_893cd790f12821f5577d1f12fac22750.setContent(html_41b7f9da963c2a01a83bf415a5efe1ab);
+            
+        
+
+        marker_a13d2f415ca179d058294c0b81824ffd.bindPopup(popup_893cd790f12821f5577d1f12fac22750)
+        ;
+
+        
+    
+    
+                marker_a13d2f415ca179d058294c0b81824ffd.setIcon(icon_773e5ae53be02077007557d69ddcf68d);
+            
+    
+            var marker_2d5bc95bfb0df8a8d7e12115212d5633 = L.marker(
+                [24.95305, 121.5428729],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_707736dfcb400524b14d149eb0350119 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f84f060572f67db058dd7f0ffb1c9a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_315190f1074e2dca0a046885f90d837a = $(`<div id="html_315190f1074e2dca0a046885f90d837a" style="width: 100.0%; height: 100.0%;">站名: 青潭一</div>`)[0];
+                popup_5f84f060572f67db058dd7f0ffb1c9a5.setContent(html_315190f1074e2dca0a046885f90d837a);
+            
+        
+
+        marker_2d5bc95bfb0df8a8d7e12115212d5633.bindPopup(popup_5f84f060572f67db058dd7f0ffb1c9a5)
+        ;
+
+        
+    
+    
+                marker_2d5bc95bfb0df8a8d7e12115212d5633.setIcon(icon_707736dfcb400524b14d149eb0350119);
+            
+    
+            var marker_5c41989f443ac67afc483aa0d1197c1f = L.marker(
+                [24.95347, 121.5405279],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_6619845a5bf1a856938d075a5b5e9f45 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99cbb63c88ebfc98c77fe95f877c155e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb4699a517702d64e269b3d6a4dd6fa5 = $(`<div id="html_cb4699a517702d64e269b3d6a4dd6fa5" style="width: 100.0%; height: 100.0%;">站名: 新店國小</div>`)[0];
+                popup_99cbb63c88ebfc98c77fe95f877c155e.setContent(html_cb4699a517702d64e269b3d6a4dd6fa5);
+            
+        
+
+        marker_5c41989f443ac67afc483aa0d1197c1f.bindPopup(popup_99cbb63c88ebfc98c77fe95f877c155e)
+        ;
+
+        
+    
+    
+                marker_5c41989f443ac67afc483aa0d1197c1f.setIcon(icon_6619845a5bf1a856938d075a5b5e9f45);
+            
+    
+            var marker_dfb696273b51e2477659f28b875c0182 = L.marker(
+                [24.955388, 121.539103],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_b079a0d12328a24b558a3701f2041d15 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5db5fbe90ee4d2ca317196add4c023dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_257ba10b0abe6a5a23ab2a2613ef3c6b = $(`<div id="html_257ba10b0abe6a5a23ab2a2613ef3c6b" style="width: 100.0%; height: 100.0%;">站名: 文山國中</div>`)[0];
+                popup_5db5fbe90ee4d2ca317196add4c023dd.setContent(html_257ba10b0abe6a5a23ab2a2613ef3c6b);
+            
+        
+
+        marker_dfb696273b51e2477659f28b875c0182.bindPopup(popup_5db5fbe90ee4d2ca317196add4c023dd)
+        ;
+
+        
+    
+    
+                marker_dfb696273b51e2477659f28b875c0182.setIcon(icon_b079a0d12328a24b558a3701f2041d15);
+            
+    
+            var marker_b539221d7fc679db9a5010c3ad79f287 = L.marker(
+                [24.956689, 121.538524],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_ed744fca051b61c12d31587e35f37a92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e9a3dba2bd4e46189e7692ba82bef7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dab0a3de9299a061482030c302bcf32b = $(`<div id="html_dab0a3de9299a061482030c302bcf32b" style="width: 100.0%; height: 100.0%;">站名: 碧潭</div>`)[0];
+                popup_0e9a3dba2bd4e46189e7692ba82bef7e.setContent(html_dab0a3de9299a061482030c302bcf32b);
+            
+        
+
+        marker_b539221d7fc679db9a5010c3ad79f287.bindPopup(popup_0e9a3dba2bd4e46189e7692ba82bef7e)
+        ;
+
+        
+    
+    
+                marker_b539221d7fc679db9a5010c3ad79f287.setIcon(icon_ed744fca051b61c12d31587e35f37a92);
+            
+    
+            var marker_bc3a14c0afe32e5b9b91149e6389b702 = L.marker(
+                [24.958891, 121.538126],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_b151cd8de10c6ff7ebf5735e41492888 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3bc03ff4dff6976655ddf1f148b3ad23 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0b4424ff850b1cacf90a9efe91e8709 = $(`<div id="html_b0b4424ff850b1cacf90a9efe91e8709" style="width: 100.0%; height: 100.0%;">站名: 捷運新店站(北新路)</div>`)[0];
+                popup_3bc03ff4dff6976655ddf1f148b3ad23.setContent(html_b0b4424ff850b1cacf90a9efe91e8709);
+            
+        
+
+        marker_bc3a14c0afe32e5b9b91149e6389b702.bindPopup(popup_3bc03ff4dff6976655ddf1f148b3ad23)
+        ;
+
+        
+    
+    
+                marker_bc3a14c0afe32e5b9b91149e6389b702.setIcon(icon_b151cd8de10c6ff7ebf5735e41492888);
+            
+    
+            var marker_4a46722373c99cbd27091b7d444ab957 = L.marker(
+                [24.963158, 121.53982],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_8a43a6323ea22088b6545772421ded9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f3a298df8a249a21e1ef652dcf98c75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03324a9162f7c42f7271366621ceec9a = $(`<div id="html_03324a9162f7c42f7271366621ceec9a" style="width: 100.0%; height: 100.0%;">站名: 碧潭橋頭</div>`)[0];
+                popup_6f3a298df8a249a21e1ef652dcf98c75.setContent(html_03324a9162f7c42f7271366621ceec9a);
+            
+        
+
+        marker_4a46722373c99cbd27091b7d444ab957.bindPopup(popup_6f3a298df8a249a21e1ef652dcf98c75)
+        ;
+
+        
+    
+    
+                marker_4a46722373c99cbd27091b7d444ab957.setIcon(icon_8a43a6323ea22088b6545772421ded9b);
+            
+    
+            var marker_fbbb021aa6a23195b115b07b829e5d64 = L.marker(
+                [24.965001, 121.5405875],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_d89c8304ee7b50f4e980d7e5b922f0e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c93e6150f379456ef5f55090e181af24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ae9c3a89726a1014c1f3c2bb02f0dfd = $(`<div id="html_9ae9c3a89726a1014c1f3c2bb02f0dfd" style="width: 100.0%; height: 100.0%;">站名: 檳榔路</div>`)[0];
+                popup_c93e6150f379456ef5f55090e181af24.setContent(html_9ae9c3a89726a1014c1f3c2bb02f0dfd);
+            
+        
+
+        marker_fbbb021aa6a23195b115b07b829e5d64.bindPopup(popup_c93e6150f379456ef5f55090e181af24)
+        ;
+
+        
+    
+    
+                marker_fbbb021aa6a23195b115b07b829e5d64.setIcon(icon_d89c8304ee7b50f4e980d7e5b922f0e9);
+            
+    
+            var marker_419c1470fae8a465bbf337bf4cccb375 = L.marker(
+                [24.967638, 121.5416161],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_1f693c33111afdf4ba1f636c9b560c1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9397cbff9a51a390becee5a02e996440 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5fe79536527df85910132baa69b9817d = $(`<div id="html_5fe79536527df85910132baa69b9817d" style="width: 100.0%; height: 100.0%;">站名: 捷運新店區公所站(北新)</div>`)[0];
+                popup_9397cbff9a51a390becee5a02e996440.setContent(html_5fe79536527df85910132baa69b9817d);
+            
+        
+
+        marker_419c1470fae8a465bbf337bf4cccb375.bindPopup(popup_9397cbff9a51a390becee5a02e996440)
+        ;
+
+        
+    
+    
+                marker_419c1470fae8a465bbf337bf4cccb375.setIcon(icon_1f693c33111afdf4ba1f636c9b560c1d);
+            
+    
+            var marker_feee6d043867c1db28dc44886a448988 = L.marker(
+                [24.971513, 121.542921],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_96af93e3e49ac0afb0ca4a02d48561bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67167dd0db2ef1362535af930c5c23e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7c629384dbde0dc88a660fd763fffeb = $(`<div id="html_c7c629384dbde0dc88a660fd763fffeb" style="width: 100.0%; height: 100.0%;">站名: 七張(北新路)</div>`)[0];
+                popup_67167dd0db2ef1362535af930c5c23e1.setContent(html_c7c629384dbde0dc88a660fd763fffeb);
+            
+        
+
+        marker_feee6d043867c1db28dc44886a448988.bindPopup(popup_67167dd0db2ef1362535af930c5c23e1)
+        ;
+
+        
+    
+    
+                marker_feee6d043867c1db28dc44886a448988.setIcon(icon_96af93e3e49ac0afb0ca4a02d48561bc);
+            
+    
+            var marker_bbae2ea4659043431f8b47ded840aaab = L.marker(
+                [24.9753, 121.5430453],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_f9e54cfe07cf6b1de34686e637f0bde2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_efb689789f09f4f53ebbcc169f5acd96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9016b7a6451e56c99ebbf45542dd959a = $(`<div id="html_9016b7a6451e56c99ebbf45542dd959a" style="width: 100.0%; height: 100.0%;">站名: 捷運七張站</div>`)[0];
+                popup_efb689789f09f4f53ebbcc169f5acd96.setContent(html_9016b7a6451e56c99ebbf45542dd959a);
+            
+        
+
+        marker_bbae2ea4659043431f8b47ded840aaab.bindPopup(popup_efb689789f09f4f53ebbcc169f5acd96)
+        ;
+
+        
+    
+    
+                marker_bbae2ea4659043431f8b47ded840aaab.setIcon(icon_f9e54cfe07cf6b1de34686e637f0bde2);
+            
+    
+            var marker_20c567c3923be81f4db44bedce7786b3 = L.marker(
+                [24.978161, 121.542795],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_cb6db137912d8816a858341b33d9b656 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c6f50f3dfa3b4cb2cafcda0b3f357d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa0c15d4edab9bde89ac7af78b6df980 = $(`<div id="html_fa0c15d4edab9bde89ac7af78b6df980" style="width: 100.0%; height: 100.0%;">站名: 新店郵局</div>`)[0];
+                popup_7c6f50f3dfa3b4cb2cafcda0b3f357d1.setContent(html_fa0c15d4edab9bde89ac7af78b6df980);
+            
+        
+
+        marker_20c567c3923be81f4db44bedce7786b3.bindPopup(popup_7c6f50f3dfa3b4cb2cafcda0b3f357d1)
+        ;
+
+        
+    
+    
+                marker_20c567c3923be81f4db44bedce7786b3.setIcon(icon_cb6db137912d8816a858341b33d9b656);
+            
+    
+            var marker_b6eb4362a4f98fb0cad0944fdccc85d9 = L.marker(
+                [24.981232, 121.5418387],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_1ad9ffd51a13829f23831e8aa485fbba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f9ae85f484a08fd707a98a906453a79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ab92a8507f024d02dfadd22ef261655 = $(`<div id="html_8ab92a8507f024d02dfadd22ef261655" style="width: 100.0%; height: 100.0%;">站名: 大坪林</div>`)[0];
+                popup_8f9ae85f484a08fd707a98a906453a79.setContent(html_8ab92a8507f024d02dfadd22ef261655);
+            
+        
+
+        marker_b6eb4362a4f98fb0cad0944fdccc85d9.bindPopup(popup_8f9ae85f484a08fd707a98a906453a79)
+        ;
+
+        
+    
+    
+                marker_b6eb4362a4f98fb0cad0944fdccc85d9.setIcon(icon_1ad9ffd51a13829f23831e8aa485fbba);
+            
+    
+            var marker_042317060355e9f686aa4375d663c86a = L.marker(
+                [24.983344, 121.5413983],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_baffda12477a384ef83fd7485e629c31 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af7ab4baa54adc0f10664323148f52c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11b63f0c9310ddb6ad3fac271e59f8ff = $(`<div id="html_11b63f0c9310ddb6ad3fac271e59f8ff" style="width: 100.0%; height: 100.0%;">站名: 捷運大坪林站</div>`)[0];
+                popup_af7ab4baa54adc0f10664323148f52c4.setContent(html_11b63f0c9310ddb6ad3fac271e59f8ff);
+            
+        
+
+        marker_042317060355e9f686aa4375d663c86a.bindPopup(popup_af7ab4baa54adc0f10664323148f52c4)
+        ;
+
+        
+    
+    
+                marker_042317060355e9f686aa4375d663c86a.setIcon(icon_baffda12477a384ef83fd7485e629c31);
+            
+    
+            var marker_be3270cde3ea5ccb4657ba9192314df8 = L.marker(
+                [24.99113, 121.54025],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_682f25c970facc360c7ba621250b4267 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cdf562b55aa30ebf99f0b1c9ea3215be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c21a02ec2a7229ab46e4f34cbf6d4b58 = $(`<div id="html_c21a02ec2a7229ab46e4f34cbf6d4b58" style="width: 100.0%; height: 100.0%;">站名: 滬江中學</div>`)[0];
+                popup_cdf562b55aa30ebf99f0b1c9ea3215be.setContent(html_c21a02ec2a7229ab46e4f34cbf6d4b58);
+            
+        
+
+        marker_be3270cde3ea5ccb4657ba9192314df8.bindPopup(popup_cdf562b55aa30ebf99f0b1c9ea3215be)
+        ;
+
+        
+    
+    
+                marker_be3270cde3ea5ccb4657ba9192314df8.setIcon(icon_682f25c970facc360c7ba621250b4267);
+            
+    
+            var marker_4373fffbf728300d9a033defaeb43317 = L.marker(
+                [24.992366, 121.5407616],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_d5832c421451d09ef6548637b075f407 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_484df36eb8a4e2b4a9a4016c8131ecf7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b84737840f9739e3f93c03f420d7a4ae = $(`<div id="html_b84737840f9739e3f93c03f420d7a4ae" style="width: 100.0%; height: 100.0%;">站名: 捷運景美站</div>`)[0];
+                popup_484df36eb8a4e2b4a9a4016c8131ecf7.setContent(html_b84737840f9739e3f93c03f420d7a4ae);
+            
+        
+
+        marker_4373fffbf728300d9a033defaeb43317.bindPopup(popup_484df36eb8a4e2b4a9a4016c8131ecf7)
+        ;
+
+        
+    
+    
+                marker_4373fffbf728300d9a033defaeb43317.setIcon(icon_d5832c421451d09ef6548637b075f407);
+            
+    
+            var marker_34c42a6c730d1772cf14dbc9605ae51b = L.marker(
+                [24.995452, 121.5413365],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_8cf6299160f7464a026aa0feb7de4219 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b958c1b3026974b1ec349ed3806c5966 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3cb933de07e418312853b5114180476f = $(`<div id="html_3cb933de07e418312853b5114180476f" style="width: 100.0%; height: 100.0%;">站名: 財政園區</div>`)[0];
+                popup_b958c1b3026974b1ec349ed3806c5966.setContent(html_3cb933de07e418312853b5114180476f);
+            
+        
+
+        marker_34c42a6c730d1772cf14dbc9605ae51b.bindPopup(popup_b958c1b3026974b1ec349ed3806c5966)
+        ;
+
+        
+    
+    
+                marker_34c42a6c730d1772cf14dbc9605ae51b.setIcon(icon_8cf6299160f7464a026aa0feb7de4219);
+            
+    
+            var marker_c8b80c547bd7d549f5f88a235041be23 = L.marker(
+                [24.999316, 121.5402001],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_7d478d10301d13c80259eff2e2954b76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_401680cedd4a853dbe81bfa87d782c3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01c12c7cff91265959c9a2d53b111b8b = $(`<div id="html_01c12c7cff91265959c9a2d53b111b8b" style="width: 100.0%; height: 100.0%;">站名: 萬隆</div>`)[0];
+                popup_401680cedd4a853dbe81bfa87d782c3b.setContent(html_01c12c7cff91265959c9a2d53b111b8b);
+            
+        
+
+        marker_c8b80c547bd7d549f5f88a235041be23.bindPopup(popup_401680cedd4a853dbe81bfa87d782c3b)
+        ;
+
+        
+    
+    
+                marker_c8b80c547bd7d549f5f88a235041be23.setIcon(icon_7d478d10301d13c80259eff2e2954b76);
+            
+    
+            var marker_70f5551f8ebb93b521432c167ac7bd8e = L.marker(
+                [25.001386, 121.5392576],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_6cd1e30159570f463af7777c3e9031be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e38a0d300b63080718cf779529459f4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05ddce45fdeaf1ef126f9173668146be = $(`<div id="html_05ddce45fdeaf1ef126f9173668146be" style="width: 100.0%; height: 100.0%;">站名: 捷運萬隆站</div>`)[0];
+                popup_e38a0d300b63080718cf779529459f4d.setContent(html_05ddce45fdeaf1ef126f9173668146be);
+            
+        
+
+        marker_70f5551f8ebb93b521432c167ac7bd8e.bindPopup(popup_e38a0d300b63080718cf779529459f4d)
+        ;
+
+        
+    
+    
+                marker_70f5551f8ebb93b521432c167ac7bd8e.setIcon(icon_6cd1e30159570f463af7777c3e9031be);
+            
+    
+            var marker_9754a0c8021304e01695c4a24961d911 = L.marker(
+                [25.003273, 121.5387822],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_afe945ff3deea9c948e50cc83c6f8c6e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bfa2e7596a6d45a5dfce545643c20ab3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f79373ade09f5702562220168dbb278e = $(`<div id="html_f79373ade09f5702562220168dbb278e" style="width: 100.0%; height: 100.0%;">站名: 武功國小(羅斯福)</div>`)[0];
+                popup_bfa2e7596a6d45a5dfce545643c20ab3.setContent(html_f79373ade09f5702562220168dbb278e);
+            
+        
+
+        marker_9754a0c8021304e01695c4a24961d911.bindPopup(popup_bfa2e7596a6d45a5dfce545643c20ab3)
+        ;
+
+        
+    
+    
+                marker_9754a0c8021304e01695c4a24961d911.setIcon(icon_afe945ff3deea9c948e50cc83c6f8c6e);
+            
+    
+            var marker_e7d3dff1b86686c48512fdfa32e76350 = L.marker(
+                [25.006894, 121.53901],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_a158691c561e35d6a0d18f7244debc53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_417eb45f26a898d585bf9ef9cd3c3362 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a368643fd215e43e4fd9bbbe849e251b = $(`<div id="html_a368643fd215e43e4fd9bbbe849e251b" style="width: 100.0%; height: 100.0%;">站名: 師大分部</div>`)[0];
+                popup_417eb45f26a898d585bf9ef9cd3c3362.setContent(html_a368643fd215e43e4fd9bbbe849e251b);
+            
+        
+
+        marker_e7d3dff1b86686c48512fdfa32e76350.bindPopup(popup_417eb45f26a898d585bf9ef9cd3c3362)
+        ;
+
+        
+    
+    
+                marker_e7d3dff1b86686c48512fdfa32e76350.setIcon(icon_a158691c561e35d6a0d18f7244debc53);
+            
+    
+            var marker_438ba8d707b1920d03c29029f3f94c4f = L.marker(
+                [25.012096, 121.5385308],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_0b2a2569789a2b737dfdfbacbf42d559 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef560e2ee73789b9eb09f6a54a196f40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1857ebcfc678fa898627c065f3ffefae = $(`<div id="html_1857ebcfc678fa898627c065f3ffefae" style="width: 100.0%; height: 100.0%;">站名: 公館</div>`)[0];
+                popup_ef560e2ee73789b9eb09f6a54a196f40.setContent(html_1857ebcfc678fa898627c065f3ffefae);
+            
+        
+
+        marker_438ba8d707b1920d03c29029f3f94c4f.bindPopup(popup_ef560e2ee73789b9eb09f6a54a196f40)
+        ;
+
+        
+    
+    
+                marker_438ba8d707b1920d03c29029f3f94c4f.setIcon(icon_0b2a2569789a2b737dfdfbacbf42d559);
+            
+    
+            var marker_2d0954b557963d5d45894741b3a15569 = L.marker(
+                [25.013453, 121.5401488],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_7a2eddf0e6ecceedb1f5916bbdf358ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e499bcdb947252df52695104f7beee9d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81e2a4c5fc2444a9688776367a635eb0 = $(`<div id="html_81e2a4c5fc2444a9688776367a635eb0" style="width: 100.0%; height: 100.0%;">站名: 臺灣科技大學</div>`)[0];
+                popup_e499bcdb947252df52695104f7beee9d.setContent(html_81e2a4c5fc2444a9688776367a635eb0);
+            
+        
+
+        marker_2d0954b557963d5d45894741b3a15569.bindPopup(popup_e499bcdb947252df52695104f7beee9d)
+        ;
+
+        
+    
+    
+                marker_2d0954b557963d5d45894741b3a15569.setIcon(icon_7a2eddf0e6ecceedb1f5916bbdf358ea);
+            
+    
+            var marker_c02e71a8ed078287a31531250a69dfbe = L.marker(
+                [25.015521, 121.5425256],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_6565cd0c6fa2503e396dd7ca6a2a7d51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4b5f7c955ddf79590e228081519b1a7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2704ab71c8391a126c6dc4f032132b72 = $(`<div id="html_2704ab71c8391a126c6dc4f032132b72" style="width: 100.0%; height: 100.0%;">站名: 臺大癌醫(基隆路)</div>`)[0];
+                popup_4b5f7c955ddf79590e228081519b1a7e.setContent(html_2704ab71c8391a126c6dc4f032132b72);
+            
+        
+
+        marker_c02e71a8ed078287a31531250a69dfbe.bindPopup(popup_4b5f7c955ddf79590e228081519b1a7e)
+        ;
+
+        
+    
+    
+                marker_c02e71a8ed078287a31531250a69dfbe.setIcon(icon_6565cd0c6fa2503e396dd7ca6a2a7d51);
+            
+    
+            var marker_8f5dd8587034beb53dbacac6ee8d809d = L.marker(
+                [25.017425, 121.5448494],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_b89789b1a1d408fa5665ac722d64db49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a2772624bb219b6c0a4779a4b1d48820 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6e1a6f4d6579a66a1e3c529909b2d30 = $(`<div id="html_f6e1a6f4d6579a66a1e3c529909b2d30" style="width: 100.0%; height: 100.0%;">站名: 基隆長興街口</div>`)[0];
+                popup_a2772624bb219b6c0a4779a4b1d48820.setContent(html_f6e1a6f4d6579a66a1e3c529909b2d30);
+            
+        
+
+        marker_8f5dd8587034beb53dbacac6ee8d809d.bindPopup(popup_a2772624bb219b6c0a4779a4b1d48820)
+        ;
+
+        
+    
+    
+                marker_8f5dd8587034beb53dbacac6ee8d809d.setIcon(icon_b89789b1a1d408fa5665ac722d64db49);
+            
+    
+            var marker_2dba8bed562dc374c3df4804ce10008d = L.marker(
+                [25.01963, 121.54746],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_742c7a1b16fa7dc788cb0776d2a12f7c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_811262dc85de0abcdbc897d4b31be8c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_855756bb05029f09832de79d0e99f7cd = $(`<div id="html_855756bb05029f09832de79d0e99f7cd" style="width: 100.0%; height: 100.0%;">站名: 和平高中</div>`)[0];
+                popup_811262dc85de0abcdbc897d4b31be8c6.setContent(html_855756bb05029f09832de79d0e99f7cd);
+            
+        
+
+        marker_2dba8bed562dc374c3df4804ce10008d.bindPopup(popup_811262dc85de0abcdbc897d4b31be8c6)
+        ;
+
+        
+    
+    
+                marker_2dba8bed562dc374c3df4804ce10008d.setIcon(icon_742c7a1b16fa7dc788cb0776d2a12f7c);
+            
+    
+            var marker_225992b7ad50e5f7159e4ef321149ba1 = L.marker(
+                [25.023636, 121.5519069],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_5bce76b9a8a2bcfbaaf3ca5703a3d395 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ab949bfc6bfd0d13ec5cb07411bbc64 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5788dacce83db69e961351742c3bc596 = $(`<div id="html_5788dacce83db69e961351742c3bc596" style="width: 100.0%; height: 100.0%;">站名: 捷運六張犁站(基隆路)</div>`)[0];
+                popup_0ab949bfc6bfd0d13ec5cb07411bbc64.setContent(html_5788dacce83db69e961351742c3bc596);
+            
+        
+
+        marker_225992b7ad50e5f7159e4ef321149ba1.bindPopup(popup_0ab949bfc6bfd0d13ec5cb07411bbc64)
+        ;
+
+        
+    
+    
+                marker_225992b7ad50e5f7159e4ef321149ba1.setIcon(icon_5bce76b9a8a2bcfbaaf3ca5703a3d395);
+            
+    
+            var marker_0269d979e759c1c7b28abb3e3b655888 = L.marker(
+                [25.02628, 121.5549231],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_d87277af674178c93e599985c65821e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3defb543decd9388c43c512844ea74b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0444db35862983609dfa71cc53b41131 = $(`<div id="html_0444db35862983609dfa71cc53b41131" style="width: 100.0%; height: 100.0%;">站名: 喬治商職</div>`)[0];
+                popup_3defb543decd9388c43c512844ea74b9.setContent(html_0444db35862983609dfa71cc53b41131);
+            
+        
+
+        marker_0269d979e759c1c7b28abb3e3b655888.bindPopup(popup_3defb543decd9388c43c512844ea74b9)
+        ;
+
+        
+    
+    
+                marker_0269d979e759c1c7b28abb3e3b655888.setIcon(icon_d87277af674178c93e599985c65821e5);
+            
+    
+            var marker_d3f1975eb0ae76f226da0d99bb948166 = L.marker(
+                [25.028574, 121.557017],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_9f61fbbe1c52a922fb5ef3e60bff2639 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b0d3dbeb70a614636cbe084fbd689c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90567524f26d59945db5cbe002326470 = $(`<div id="html_90567524f26d59945db5cbe002326470" style="width: 100.0%; height: 100.0%;">站名: 三興國小(臨江街觀光夜市)</div>`)[0];
+                popup_0b0d3dbeb70a614636cbe084fbd689c6.setContent(html_90567524f26d59945db5cbe002326470);
+            
+        
+
+        marker_d3f1975eb0ae76f226da0d99bb948166.bindPopup(popup_0b0d3dbeb70a614636cbe084fbd689c6)
+        ;
+
+        
+    
+    
+                marker_d3f1975eb0ae76f226da0d99bb948166.setIcon(icon_9f61fbbe1c52a922fb5ef3e60bff2639);
+            
+    
+            var marker_a6229f6a93b1445956ab22a277314768 = L.marker(
+                [25.031596, 121.5588464],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_225518e76f17547bf0e822a9c216a936 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13d5c101a47f2cf69aa25717259a3233 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e8b73bdbd431130569837754fcce697 = $(`<div id="html_7e8b73bdbd431130569837754fcce697" style="width: 100.0%; height: 100.0%;">站名: 吳興街口</div>`)[0];
+                popup_13d5c101a47f2cf69aa25717259a3233.setContent(html_7e8b73bdbd431130569837754fcce697);
+            
+        
+
+        marker_a6229f6a93b1445956ab22a277314768.bindPopup(popup_13d5c101a47f2cf69aa25717259a3233)
+        ;
+
+        
+    
+    
+                marker_a6229f6a93b1445956ab22a277314768.setIcon(icon_225518e76f17547bf0e822a9c216a936);
+            
+    
+            var marker_f2096fd1b023e49ee2446f6008c7a0e3 = L.marker(
+                [25.033677, 121.5601565],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_a832136e21caf34a1da4c5c4e96be8f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7881f6b44502dc9f5718ff5127e5fda1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c284277ec4fbfdef6e9a4f2468927b9c = $(`<div id="html_c284277ec4fbfdef6e9a4f2468927b9c" style="width: 100.0%; height: 100.0%;">站名: 世貿中心(基隆路)</div>`)[0];
+                popup_7881f6b44502dc9f5718ff5127e5fda1.setContent(html_c284277ec4fbfdef6e9a4f2468927b9c);
+            
+        
+
+        marker_f2096fd1b023e49ee2446f6008c7a0e3.bindPopup(popup_7881f6b44502dc9f5718ff5127e5fda1)
+        ;
+
+        
+    
+    
+                marker_f2096fd1b023e49ee2446f6008c7a0e3.setIcon(icon_a832136e21caf34a1da4c5c4e96be8f5);
+            
+    
+            var marker_24473b4d27cac0242a05e3fafa0512b3 = L.marker(
+                [25.035836, 121.5648932],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_7e303708068041c4549db53654a27ef5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5a3791295e4e4396d54bded43e38360 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe9d39b3587ee1cd0f1c8f9658f54f47 = $(`<div id="html_fe9d39b3587ee1cd0f1c8f9658f54f47" style="width: 100.0%; height: 100.0%;">站名: 市政府(松壽)</div>`)[0];
+                popup_a5a3791295e4e4396d54bded43e38360.setContent(html_fe9d39b3587ee1cd0f1c8f9658f54f47);
+            
+        
+
+        marker_24473b4d27cac0242a05e3fafa0512b3.bindPopup(popup_a5a3791295e4e4396d54bded43e38360)
+        ;
+
+        
+    
+    
+                marker_24473b4d27cac0242a05e3fafa0512b3.setIcon(icon_7e303708068041c4549db53654a27ef5);
+            
+    
+            var marker_7f34e8b0c89ac3e208a88ace1535faac = L.marker(
+                [25.03685, 121.5655763],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_b72554d4d792a49adad945cc29515dc0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_08b82d5568d64e1b40e24110bf7cab73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7616b1886d33cc6c6f7ecbb46af75441 = $(`<div id="html_7616b1886d33cc6c6f7ecbb46af75441" style="width: 100.0%; height: 100.0%;">站名: 市政府(松智)</div>`)[0];
+                popup_08b82d5568d64e1b40e24110bf7cab73.setContent(html_7616b1886d33cc6c6f7ecbb46af75441);
+            
+        
+
+        marker_7f34e8b0c89ac3e208a88ace1535faac.bindPopup(popup_08b82d5568d64e1b40e24110bf7cab73)
+        ;
+
+        
+    
+    
+                marker_7f34e8b0c89ac3e208a88ace1535faac.setIcon(icon_b72554d4d792a49adad945cc29515dc0);
+            
+    
+            var marker_6a2d23293da476399d0acd680aaa1d81 = L.marker(
+                [25.041009, 121.5668354],
+                {
+}
+            ).addTo(map_a6ad6c30dce2c075b72faa07d8c90a3d);
+        
+    
+            var icon_c7a77bacd1853b5b8e6696dfe1bcd80a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5096ed673b1286edfde41f40df88642b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2a77c336e5af0c76925cf91fc857764 = $(`<div id="html_c2a77c336e5af0c76925cf91fc857764" style="width: 100.0%; height: 100.0%;">站名: 捷運市政府站</div>`)[0];
+                popup_5096ed673b1286edfde41f40df88642b.setContent(html_c2a77c336e5af0c76925cf91fc857764);
+            
+        
+
+        marker_6a2d23293da476399d0acd680aaa1d81.bindPopup(popup_5096ed673b1286edfde41f40df88642b)
+        ;
+
+        
+    
+    
+                marker_6a2d23293da476399d0acd680aaa1d81.setIcon(icon_c7a77bacd1853b5b8e6696dfe1bcd80a);
+            
+</script>
+</html>

@@ -1,67 +1,93 @@
-import json
-import matplotlib.pyplot as plt
+import asyncio
+from bs4 import BeautifulSoup
+from playwright.async_api import async_playwright
+import folium
+import os
 
-def get_station_coordinates(geojson_path, station_names):
+async def find_bus_and_plot(route_id: str, output_path: str):
     """
-    從 GeoJSON 檔案中提取指定車站名稱的經緯度。
-    :param geojson_path: GeoJSON 檔案路徑
-    :param station_names: 車站名稱列表
-    :return: 車站名稱與經緯度的對應字典
+    抓取公車站點資訊，輸出站名，並顯示在地圖上，儲存為 HTML 檔案。
+    :param route_id: 公車代碼
+    :param output_path: 地圖儲存的 HTML 檔案路徑
     """
-    with open(geojson_path, "r", encoding="utf-8") as f:
-        geojson_data = json.load(f)
+    route_id = route_id.strip()
+    url = f"https://ebus.gov.taipei/Route/StopsOfRoute?routeid={route_id}"
+    
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
+        await page.goto(url)
 
-    station_coordinates = {}
-    for feature in geojson_data["features"]:
-        properties = feature["properties"]
-        geometry = feature["geometry"]
-        station_name = properties.get("name")  # 假設車站名稱在 "name" 欄位
-        if station_name in station_names:
-            station_coordinates[station_name] = geometry["coordinates"]
+        try:
+            await page.wait_for_selector("div#GoDirectionRoute li", timeout=10000)
+        except:
+            print("網頁載入超時，請確認公車代碼是否正確。")
+            return
 
-    return station_coordinates
+        html = await page.content()
+        await browser.close()
 
-def plot_routes(station_coordinates, route_name, color):
-    """
-    繪製路線圖。
-    :param station_coordinates: 車站名稱與經緯度的對應字典
-    :param route_name: 路線名稱
-    :param color: 路線顏色
-    """
-    lons, lats = zip(*station_coordinates.values())
-    plt.plot(lons, lats, marker="o", label=route_name, color=color)
-    for station, (lon, lat) in station_coordinates.items():
-        plt.text(lon, lat, station, fontsize=8, ha="right")
+    soup = BeautifulSoup(html, "html.parser")
+    station_items = soup.select("div#GoDirectionRoute li")
 
-def main():
-    # 承德幹線與基隆幹線的車站名稱
-    chengde_stations = ["Station A", "Station B", "Station C"]  # 替換為實際車站名稱
-    keelung_stations = ["Station X", "Station Y", "Station Z"]  # 替換為實際車站名稱
+    if not station_items:
+        print("未找到任何站牌資料，請確認公車代碼是否正確。")
+        return
 
-    # GeoJSON 檔案路徑
-    geojson_path = "C:\\Users\\User\\Desktop\\cycu_oop_11372011\\20250422\\bus_stations.geojson"
+    all_stations = []
 
-    # 獲取車站經緯度
-    chengde_coordinates = get_station_coordinates(geojson_path, chengde_stations)
-    keelung_coordinates = get_station_coordinates(geojson_path, keelung_stations)
+    for idx, li in enumerate(station_items, start=1):
+        try:
+            spans = li.select("span.auto-list-stationlist span")
+            inputs = li.select("input")
 
-    # 繪製路線圖
-    plt.figure(figsize=(10, 8))
-    plot_routes(chengde_coordinates, "承德幹線", "blue")
-    plot_routes(keelung_coordinates, "基隆幹線", "red")
+            stop_time = spans[0].get_text(strip=True)
+            stop_number = spans[1].get_text(strip=True)
+            stop_name = spans[2].get_text(strip=True)
 
-    # 圖例與標題
-    plt.legend()
-    plt.title("承德幹線與基隆幹線車站路線圖")
-    plt.xlabel("經度")
-    plt.ylabel("緯度")
-    plt.grid(True)
+            stop_id = inputs[0]['value']
+            latitude = float(inputs[1]['value'])
+            longitude = float(inputs[2]['value'])
 
-    # 儲存圖片
-    output_path = "C:\\Users\\User\\Desktop\\cycu_oop_11372011\\20250422\\bus_routes.png"
-    plt.savefig(output_path)
-    plt.show()
-    print(f"路線圖已儲存為 {output_path}")
+            station = [stop_time, stop_number, stop_name, stop_id, latitude, longitude]
+            all_stations.append(station)
 
+        except Exception as e:
+            print(f"第 {idx} 筆資料處理錯誤：{e}")
+
+    if not all_stations:
+        print("沒有成功抓取到任何站牌資訊。")
+        return
+
+    # 輸出所有站名
+    print("\n抓到的站牌資訊如下：")
+    for station in all_stations:
+        print(f"站名: {station[2]}")
+
+    # 建立地圖
+    m = folium.Map(location=[all_stations[0][4], all_stations[0][5]], zoom_start=13)  # 以第一個站點為中心
+
+    # 將站點加入地圖
+    for station in all_stations:
+        stop_name = station[2]
+        latitude = station[4]
+        longitude = station[5]
+        folium.Marker(
+            location=[latitude, longitude],
+            popup=f"站名: {stop_name}",
+            icon=folium.Icon(color="blue", icon="info-sign")
+        ).add_to(m)
+
+    # 儲存地圖為 HTML
+    m.save(output_path)
+    print(f"\n地圖已儲存至 {output_path}")
+
+# 執行主程式
 if __name__ == "__main__":
-    main()
+    route_id = input("請告訴我公車代碼：").strip()  # 在主程式中取得 route_id
+    output_dir = r"C:\Users\User\Desktop\cycu_oop_11372011\20250422"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    output_file = input(f"請輸入地圖儲存檔案名稱（例如：bus_map.html）：").strip()
+    output_path = os.path.join(output_dir, output_file)
+    asyncio.run(find_bus_and_plot(route_id, output_path))
