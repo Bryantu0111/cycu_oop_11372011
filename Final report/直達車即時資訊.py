@@ -2,11 +2,21 @@ import asyncio
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 import csv
-import os
+import os  
 import folium
 
-CSV_PATH = r"C:\Users\User\Desktop\cycu_oop_11372011\Final report\all_bus_stops_by_route.csv"
-ROUTE_MAP_CSV = r"C:\Users\User\Desktop\cycu_oop_11372011\Final report\taipei_bus_routes.csv"
+CSV_PATH = r"C:\Users\user\Desktop\程式碼\cycu_oop_11372011\Final report\all_bus_stops_by_route.csv"
+ROUTE_MAP_CSV = r"C:\Users\user\Desktop\程式碼\cycu_oop_11372011\Final report\taipei_bus_routes.csv"
+
+def load_route_mapping(csv_path):
+    mapping = {}
+    with open(csv_path, encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            name = row["路線名稱"].strip()
+            code = row["公車代碼"].strip() 
+            mapping[name] = code
+    return mapping
 
 def list_stop_options_by_name(stop_name):
     unique_ids = set()
@@ -20,37 +30,6 @@ def list_stop_options_by_name(stop_name):
                     unique_ids.add(stop_id)
                     options.append({"站牌ID": stop_id})
     return options
-
-def choose_stop_id(stop_label):
-    stop_name = input(f"請輸入{stop_label}站名：").strip()
-    options = list_stop_options_by_name(stop_name)
-    if not options:
-        print(f"❌ 找不到站名「{stop_name}」的資料。")
-        return None, None
-
-    print(f"\n找到以下「{stop_name}」的站牌ID：")
-    for idx, opt in enumerate(options, 1):
-        print(f"{idx}. 站牌ID：{opt['站牌ID']}")
-
-    while True:
-        try:
-            choice = int(input(f"請選擇{stop_label}對應站牌ID（輸入編號）：").strip())
-            if 1 <= choice <= len(options):
-                return stop_name, options[choice - 1]["站牌ID"]
-            else:
-                print("⚠️ 超出選項範圍，請重新輸入。")
-        except ValueError:
-            print("⚠️ 請輸入有效的編號。")
-
-def load_route_mapping(csv_path):
-    mapping = {}
-    with open(csv_path, encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            name = row["路線名稱"].strip()
-            code = row["公車代碼"].strip()
-            mapping[name] = code
-    return mapping
 
 async def fetch_bus_routes(station_id):
     url = f"https://ebus.gov.taipei/Stop/RoutesOfStop?Stopid={station_id}"
@@ -67,41 +46,28 @@ async def fetch_bus_routes(station_id):
 async def get_bus_route_stops(route_id: str) -> dict:
     url = f"https://ebus.gov.taipei/Route/StopsOfRoute?routeid={route_id.strip()}"
     result = {"去程": [], "返程": []}
-
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
         await page.goto(url)
-
         try:
-            await page.wait_for_selector("div#GoDirectionRoute li, div#BackDirectionRoute li", timeout=50000)
+            await page.wait_for_selector("div#GoDirectionRoute li, div#BackDirectionRoute li", timeout=80000)
         except:
             print("無法載入公車站牌頁面，請確認路線代碼是否正確。")
             return result
-
         html = await page.content()
         await browser.close()
-
     soup = BeautifulSoup(html, "html.parser")
-
     for direction, selector in [("去程", "div#GoDirectionRoute li"), ("返程", "div#BackDirectionRoute li")]:
         station_items = soup.select(selector)
         for idx, li in enumerate(station_items, start=1):
             spans = li.select("span.auto-list-stationlist span")
             inputs = li.select("input")
-
-            # 判斷即時時間欄位，去程通常 spans[0] 是即時時間，返程如果抓不到用 fallback
             arrival_time = "無資料"
             try:
-                if direction == "去程":
-                    arrival_time = spans[0].get_text(strip=True)
-                elif direction == "返程":
-                    arrival_time = spans[0].get_text(strip=True)
-                    if not arrival_time:
-                        arrival_time = spans[1].get_text(strip=True) if len(spans) > 1 else "無資料"
+                arrival_time = spans[0].get_text(strip=True)
             except Exception:
                 pass
-
             if len(spans) >= 3 and len(inputs) >= 3:
                 result[direction].append({
                     "順序": idx,
@@ -116,7 +82,6 @@ async def get_bus_route_stops(route_id: str) -> dict:
 def plot_combined_segment_map(route_id, route_data, start_name, dest_name, output_path):
     m = folium.Map(location=[25.0330, 121.5654], zoom_start=13)
     segment_color = "orange"
-
     valid_direction = None
     all_stops = []
 
@@ -171,23 +136,92 @@ def plot_combined_segment_map(route_id, route_data, start_name, dest_name, outpu
                 icon=folium.Icon(color="darkred", icon="flag")
             ).add_to(m)
 
+    # ✅ 新增推估公車位置（根據到站時間）
+    estimated_bus_idx = None
+    for i, stop in enumerate(all_stops):
+        eta = stop.get("到站時間", "")
+        if "進站" in eta or "即將" in eta or "1分" in eta:
+            estimated_bus_idx = i
+            break
+        elif "分鐘" in eta:
+            try:
+                mins = int(eta.replace("分鐘", "").strip())
+                if mins <= 2:
+                    estimated_bus_idx = i
+                    break
+            except:
+                continue
+
+    if estimated_bus_idx is not None and estimated_bus_idx > 0:
+        lat1, lon1 = all_stops[estimated_bus_idx - 1]["lat"], all_stops[estimated_bus_idx - 1]["lon"]
+        lat2, lon2 = all_stops[estimated_bus_idx]["lat"], all_stops[estimated_bus_idx]["lon"]
+        est_lat = (lat1 + lat2) / 2
+        est_lon = (lon1 + lon2) / 2
+
+        folium.Marker(
+            location=[est_lat, est_lon],
+            icon=folium.Icon(color="blue", icon="bus", prefix='fa'),
+            popup="🚌 推估公車目前所在區間"
+        ).add_to(m)
+
+    
+    # === 預估總花費時間（等車 + 車程） ===
+    try:
+        idx_start = next(i for i, stop in enumerate(all_stops) if stop["站名"] == start_name)
+        idx_end = next(i for i, stop in enumerate(all_stops) if stop["站名"] == dest_name)
+    except StopIteration:
+        idx_start, idx_end = 0, 0
+
+    eta_str = all_stops[idx_start].get("到站時間", "")
+    wait_min = 0
+    if "進站" in eta_str or "即將" in eta_str:
+        wait_min = 0
+    elif "分鐘" in eta_str:
+        try:
+            wait_min = int(eta_str.replace("分鐘", "").strip())
+        except:
+            wait_min = 0
+
+    num_stations = max(0, idx_end - idx_start)
+    ride_min = num_stations * 2  # 每站預估 2 分鐘（可自行調整）
+    total_time = wait_min + ride_min
+
+    # 顯示於起點站旁邊（略為向北偏移）
+    offset_lat = all_stops[idx_start]["lat"] + 0.0015
+    offset_lon = all_stops[idx_start]["lon"]
+
+    folium.Marker(
+        location=[offset_lat, offset_lon],
+        icon=folium.Icon(color="purple", icon="info-sign"),
+        popup=f"🕒 預估總花費時間：約 {total_time} 分鐘\n（等車 {wait_min} 分 + 車程 {ride_min} 分）"
+    ).add_to(m)
+
     m.save(output_path)
     return output_path
 
 async def find_direct_bus_with_arrival_time_and_map():
     print("📍 請選擇出發與目的地站牌：\n")
-    start_name, start_id = choose_stop_id("出發地")
-    if not start_id:
-        return
-    dest_name, dest_id = choose_stop_id("目的地")
-    if not dest_id:
+    start_name = input("請輸入出發地站名：").strip()
+    dest_name = input("請輸入目的地站名：").strip()
+
+    start_options = list_stop_options_by_name(start_name)
+    dest_options = list_stop_options_by_name(dest_name)
+
+    if not start_options or not dest_options:
+        print("❌ 找不到相關站牌資料。")
         return
 
-    print(f"\n出發地站牌ID: {start_id}，目的地站牌ID: {dest_id}")
+    print(f"\n找到以下出發地站牌ID：{[opt['站牌ID'] for opt in start_options]}")
+    print(f"\n找到以下目的地站牌ID：{[opt['站牌ID'] for opt in dest_options]}")
 
     print("\n正在查詢公車路線...")
-    routes_start = await fetch_bus_routes(start_id)
-    routes_dest = await fetch_bus_routes(dest_id)
+    routes_start = set()
+    for start_id in [opt["站牌ID"] for opt in start_options]:
+        routes_start.update(await fetch_bus_routes(start_id))
+
+    routes_dest = set()
+    for dest_id in [opt["站牌ID"] for opt in dest_options]:
+        routes_dest.update(await fetch_bus_routes(dest_id))
 
     common_routes = routes_start.intersection(routes_dest)
     route_map = load_route_mapping(ROUTE_MAP_CSV)
