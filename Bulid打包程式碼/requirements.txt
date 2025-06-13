@@ -1,0 +1,5 @@
+streamlit
+folium
+playwright
+beautifulsoup4
+pandas

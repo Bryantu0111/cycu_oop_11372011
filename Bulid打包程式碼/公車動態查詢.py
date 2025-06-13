@@ -1,3 +1,6 @@
+# ⚠️ 本程式需透過 Streamlit 執行，請勿直接按下「執行程式」按鈕
+# ✅ 正確做法：請執行 run.bat，或在命令列輸入 `streamlit run 公車動態查詢.py`
+
 import streamlit as st
 import pandas as pd
 import math
@@ -9,8 +12,12 @@ from tempfile import NamedTemporaryFile
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
-# 載入資料
-df = pd.read_csv(r"C:\Users\user\Desktop\程式碼\cycu_oop_11372011\Final report\bus_stops_with_lat_lon.csv")
+# 載入資料（使用絕對路徑避免找不到檔案）
+script_dir = os.path.dirname(os.path.abspath(__file__))  # 取得當前 .py 檔案所在目錄
+csv_path = os.path.join(script_dir, "bus_stops_with_lat_lon.csv")
+df = pd.read_csv(csv_path)  # 載入 csv 檔案
+
+
 
 # 讀取路線代碼與中文名稱對應表
 route_name_map = dict(zip(df["路線代碼"], df["路線名稱"]))
@@ -242,4 +249,4 @@ if st.session_state.get("show_map") and st.session_state["direct_routes"]:
 st.caption(f"地圖最後更新時間：{st.session_state['last_refresh'].strftime('%H:%M:%S')}")
 
 
-# streamlit run "C:\Users\user\Desktop\程式碼\cycu_oop_11372011\Final report\阿倫.py"
+# streamlit run "C:\Users\user\Desktop\程式碼\cycu_oop_11372011\一般打包程式碼\公車動態查詢.py"
