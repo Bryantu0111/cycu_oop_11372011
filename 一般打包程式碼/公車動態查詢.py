@@ -134,8 +134,24 @@ def fetch_stop_time(route_id, direction, stop_name):
 # Streamlit 主頁面
 st.title("台北市公車路線查詢")
 
-start_name = st.selectbox("選擇起始站", sorted(df["站名"].unique()))
-end_name = st.selectbox("選擇終點站", sorted(df["站名"].unique()))
+station_list = ["請選擇站名"] + sorted(df["站名"].unique())
+
+start_name = st.selectbox("選擇起始站", station_list, key="start_select")
+end_name = st.selectbox("選擇終點站", station_list, key="end_select")
+
+
+
+# 👉 確保 query_button 與 refresh_button 變數永遠有定義，避免錯誤
+query_button = False
+refresh_button = False
+
+if start_name != "請選擇站名" and end_name != "請選擇站名":
+    query_button = st.button("查詢路線", key="query_button")
+    refresh_button = st.button("重新查詢路線（強制刷新）", key="refresh_button")
+else:
+    st.warning("請先選擇起點與終點站")
+
+
 
 if "last_refresh" not in st.session_state:
     st.session_state["last_refresh"] = pd.Timestamp.now()
@@ -146,8 +162,6 @@ if "bus_info" not in st.session_state:
 if "direct_routes" not in st.session_state:
     st.session_state["direct_routes"] = []
 
-query_button = st.button("查詢路線")
-refresh_button = st.button("重新查詢路線（強制刷新）")
 current_time = pd.Timestamp.now()
 elapsed_time = (current_time - st.session_state["last_refresh"]).total_seconds()
 
